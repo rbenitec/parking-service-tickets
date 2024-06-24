@@ -43,9 +43,8 @@ public class TicketServiceImpl implements TicketService {
     private TicketEntity buildTicketEntity(RequestDto requestDto) {
         return TicketEntity.builder()
                 .username(requestDto.getUsername())
-                .campus(requestDto.getCampus())
                 .placeId(requestDto.getPlaceId())
-                .vehicleId(requestDto.getVehicleId())
+                .acoountId(requestDto.getAccountId())
                 .createdAt(LocalDateTime.now())
                 .build();
     }

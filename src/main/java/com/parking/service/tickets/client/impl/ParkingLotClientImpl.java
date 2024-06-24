@@ -1,5 +1,6 @@
 package com.parking.service.tickets.client.impl;
 
+import com.parking.service.tickets.client.ParkingLotClient;
 import com.parking.service.tickets.client.dto.Place;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Optional;
@@ -14,14 +16,15 @@ import java.util.Optional;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class ParkingLotClientImpl {
+public class ParkingLotClientImpl implements ParkingLotClient {
     private final RestTemplate restTemplate;
 
     @Value("${config.api.parking.lot.url}")
     private String urlPlace;
 
-    public Optional<Place> getUserUtp (Integer placeId) {
-        urlPlace.concat("/").concat(placeId+"");
+    @Override
+    public Optional<Place> updatePlace(Integer idPlace) {
+        urlPlace.concat("/").concat(idPlace+"");
         try {
             Place responseEntity = restTemplate.exchange(
                     urlPlace,

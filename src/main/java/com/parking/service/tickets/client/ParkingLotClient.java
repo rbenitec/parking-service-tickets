@@ -2,6 +2,8 @@ package com.parking.service.tickets.client;
 
 import com.parking.service.tickets.client.dto.Place;
 
+import java.util.Optional;
+
 public interface ParkingLotClient {
-    public Place updatePlace(Integer idPlace);
+    Optional<Place> updatePlace(Integer idPlace);
 }

@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RequestDto {
     private String username;
-    private Integer vehicleId;
+    private Integer accountId;
     private Integer placeId;
-    private String campus;
 }

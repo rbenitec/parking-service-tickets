@@ -8,12 +8,14 @@ spring:
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    hibernate:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
+    hibernate:
+      ddlAuto: update
 config:
   api:
     parking:
       lot:
         url: http://localhost:8120/interface/authenticate
 server:
-  port: 8099
+  port: 8100

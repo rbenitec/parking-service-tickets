@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
+@Entity
 @Table(name = "ticket")
 public class TicketEntity {
     @Id
@@ -17,11 +18,10 @@ public class TicketEntity {
     @Column(name = "ticket_number")
     private Integer ticketNumber;
     private String username;
-    @Column(name = "vehicleid")
-    private Integer vehicleId;
-    @Column(name = "placeid")
+    @Column(name = "account_id")
+    private Integer acoountId;
+    @Column(name = "place_id")
     private Integer placeId;
-    @Column(name = "createdat")
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
-    private String campus;
 }

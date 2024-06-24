@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface TicketRepository extends JpaRepository<TicketEntity, Integer> {
     @Query(value = "SELECT * FROM TICKET t WHERE t.USERNAME=:username", nativeQuery = true)
-    public List<TicketEntity> getTicketsUser (@Param("username") String username);
+    List<TicketEntity> getTicketsUser (@Param("username") String username);
 }
