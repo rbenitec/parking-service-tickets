@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: login
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/parking
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+    show-sql: true
+config:
+  api:
+    parking:
+      lot:
+        url: http://localhost:8120/interface/authenticate
+server:
+  port: 8099
