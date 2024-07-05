@@ -16,6 +16,6 @@ config:
   api:
     parking:
       lot:
-        url: http://localhost:8120/interface/authenticate
+        url: http://localhost:8089/parking/update/lot
 server:
   port: 8100

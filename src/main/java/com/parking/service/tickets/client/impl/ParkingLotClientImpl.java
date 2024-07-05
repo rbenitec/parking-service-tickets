@@ -2,6 +2,8 @@ package com.parking.service.tickets.client.impl;
 
 import com.parking.service.tickets.client.ParkingLotClient;
 import com.parking.service.tickets.client.dto.Place;
+import com.parking.service.tickets.client.dto.RequestParkingDto;
+import com.parking.service.tickets.controller.dto.RequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,12 +26,12 @@ public class ParkingLotClientImpl implements ParkingLotClient {
 
     @Override
     public Optional<Place> updatePlace(Integer idPlace) {
-        urlPlace.concat("/").concat(idPlace+"");
+        RequestParkingDto requestDto = new RequestParkingDto(idPlace);
         try {
             Place responseEntity = restTemplate.exchange(
                     urlPlace,
-                    HttpMethod.PATCH,
-                    new HttpEntity<>(null),
+                    HttpMethod.POST,
+                    new HttpEntity<>(requestDto),
                     Place.class).getBody();
             assert responseEntity != null;
             return Optional.of(responseEntity);

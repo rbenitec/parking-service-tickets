@@ -13,6 +13,5 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RequestDto {
     private String username;
-    private Integer accountId;
     private Integer placeId;
 }
